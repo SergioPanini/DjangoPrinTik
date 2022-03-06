@@ -80,46 +80,10 @@ class FeedbackSerializer(serializers.ModelSerializer):
         model = Feedback
         fields = '__all__'
 
+        
 class FeedbackCreateSerializer(serializers.ModelSerializer):
     '''Сериализатор создания отзыва'''
 
     class Meta:
         model = Feedback
         fields = '__all__'
-
-
-
-# class FeedbackCreateSerializer(serializers.ModelSerializer):
-#     '''Создает отзыв на товар'''
-
-#     class Meta:
-#         model = Feedback
-#         fields = '__all__'
-
-
-# class FeedbackDetailSerializer(serializers.ModelSerializer):
-#     '''Сериализатор отзыва'''
-
-#     class Meta:
-#         model = Feedback
-#         fields = ('author', 'text', 'create_datetime', 'product')
-
-
-# class ProductImageListSerialiser(serializers.ModelSerializer):
-#     '''Сериализатор картинок'''
-
-#     class Meta:
-#         model = ProductImage
-#         fields = ('id', 'image')
-
-
-# class ProductDetailSerializer(serializers.ModelSerializer):
-#     '''Сериализатор товара'''
-
-#     category = serializers.SlugRelatedField(slug_field='name', read_only=True)
-#     feedbacks = FeedbackListSerializer(many=True)
-#     #images = ProductImageListSerialiser(many=True)
-
-#     class Meta:
-#         model = Product
-#         fields = ('name', 'description', 'create_datetime', 'update_datetime', 'category', 'feedbacks')
